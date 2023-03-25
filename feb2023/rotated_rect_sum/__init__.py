@@ -1,0 +1,1 @@
+from .rotated_rect_sum import rotated_rect_sum_test
