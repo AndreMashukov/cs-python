@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-def add_to_k(a: list[int], m: int, k: int):
+def add_to_k(a, m, k):
     num_subarray_with_sum_k = 0
     cnt_in_subarray = defaultdict(int)
     idx_subarray = defaultdict(int)
@@ -12,6 +12,8 @@ def add_to_k(a: list[int], m: int, k: int):
             last_index = idx_subarray[a[i]]    
         cnt_in_subarray[a[i]] += 1
         idx_subarray[k-a[i]] = i
+
+    print(f'idx_subarray: {idx_subarray}')
      
     for i in range(m, len(a)):
         cnt_in_subarray[a[i-m]] -= 1
